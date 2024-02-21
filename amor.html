@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Declaración de Amor</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+
+        #gif-container {
+            margin-bottom: 20px;
+        }
+
+        #corazones {
+            display: none;
+            font-size: 24px;
+            color: red;
+        }
+
+        .boton-amor {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="gif-container">
+        <!-- Inserta la URL del gif que desees utilizar -->
+        <img src="img/chococat-hello-kitty.gif" alt="Gif">
+    </div>
+
+    <button class="boton-amor" onclick="mostrarTeGusto()">¿Me amas lo suficiente?</button>
+
+    <div id="corazones">&#10084;&#10084;&#10084;</div>
+
+    <script>
+        function mostrarTeGusto() {
+            var botonTeGusto = document.createElement("button");
+            botonTeGusto.textContent = "¿Soy el Amor de tu Vida?";
+            botonTeGusto.classList.add("boton-amor");
+            botonTeGusto.onclick = mostrarPropuestaMatrimonio;
+
+            document.body.appendChild(botonTeGusto);
+        }
+
+        function mostrarPropuestaMatrimonio() {
+            var poema = document.createElement("div");
+            poema.innerHTML = '<i>"Estos son mis votos."</i>';
+            poema.innerHTML = '<i>"Con esta mano, elevaré tus penas. Tu copa nunca estará vacía, porque seré tu vino. Con esta vela, iluminaré tu camino en la oscuridad. Con este anillo, te pido que seas mía."</i>';
+            poema.style.marginTop = "10px";
+            document.body.appendChild(poema);
+
+            var botonMatrimonio = document.createElement("button");
+            botonMatrimonio.textContent = "¿Te Quieres Casar Conmigo?";
+            botonMatrimonio.classList.add("boton-amor");
+            botonMatrimonio.onclick = function () {
+                var respuesta = confirm("¿Aceptas casarte conmigo?");
+                if (respuesta) {
+                    mostrarCuadroDialogo();
+                } else {
+                    alert("Me voy a llorar 😢");
+                }
+            };
+
+            document.body.appendChild(botonMatrimonio);
+        }
+
+        function mostrarCuadroDialogo() {
+            var respuesta = prompt("Di tus votos:");
+            if (respuesta !== null && respuesta !== "") {
+                mostrarGift();
+            } else {
+                alert("Debes expresar tus votos. ¡Inténtalo de nuevo!");
+            }
+        }
+
+        function mostrarGift() {
+            var gifContainer = document.getElementById("gif-container");
+            gifContainer.innerHTML = '<img src="img/a.jpg">';
+
+            var mensajeFinal = document.createElement("div");
+            mensajeFinal.textContent = "Te amaré por toda la eternidad ❤️❤️❤️";
+            mensajeFinal.style.fontSize = "24px";
+            mensajeFinal.style.color = "red";
+
+            document.body.appendChild(mensajeFinal);
+
+        }
+    </script>
+</body>
+
+</html>

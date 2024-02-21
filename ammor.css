@@ -1,0 +1,28 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
+}
+
+#gif-container {
+    margin-bottom: 20px;
+}
+
+#corazones {
+    display: none;
+    font-size: 24px;
+    color: red;
+}
+
+.boton-amor {
+    margin-top: 10px;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
